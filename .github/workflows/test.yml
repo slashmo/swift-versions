@@ -3,11 +3,18 @@ on:
   push:
 
 jobs:
-  download:
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+  download-macos:
+    runs-on: macos-latest
     steps:
       - name: Download .pkg file
         run: wget https://github.com/slashmo/swift-versions/releases/download/5.6.1-1/swift-5.6.1-RELEASE-osx.pkg
+
+  download-ubuntu:
+    strategy:
+      fail-fast: false
+      matrix:
+        ubuntu: [18.04, 20.04]
+    runs-on: ubuntu-${{ matrix.ubuntu }}
+    steps:
+      - name: Download .tar.gz file
+        run: wget https://github.com/slashmo/swift-versions/releases/download/5.6.1-1/swift-5.6.1-RELEASE-ubuntu${{ matrix.ubuntu }}.tar.gz
