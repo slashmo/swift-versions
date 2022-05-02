@@ -1,0 +1,12 @@
+{
+  "version": "5.6.1",
+  "release_url": "https://github.com/slashmo/swift-versions/releases/tag/5.6.1-1",
+  "files": [
+    {
+      "filename": "swift-5.6.1-RELEASE-osx.pkg",
+      "arch": "x64",
+      "platform": "darwin",
+      "download_url": "https://github.com/slashmo/swift-versions/releases/download/5.6.1-1/swift-5.6.1-RELEASE-osx.pkg"
+    }
+  ]
+}
